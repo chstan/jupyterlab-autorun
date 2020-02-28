@@ -1,0 +1,79 @@
+{
+  "name": "@jupyterlab/autorun",
+  "version": "0.0.1",
+  "description": "A JupyterLab extension enabling automatically rerunning cells during editing",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension"
+  ],
+  "homepage": "https://github.com/chstan/jupyterlab-autorun",
+  "bugs": {
+    "url": "https://github.com/chstan/jupyterlab-autorun.git/issues"
+  },
+  "license": "BSD-3-Clause",
+  "author": "Conrad Stansbury",
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}",
+    "static/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chstan/jupyterlab-autorun.git"
+  },
+  "scripts": {
+    "build": "jlpm install && tsc",
+    "build:dev": "jlpm run build && jlpm run lab:install",
+    "lab:install": "jupyter labextension install .",
+    "lab:link": "jupyter labextension install . --no-build",
+    "lab:uninstall": "jupyter labextension uninstall @jupyterlab/autorun",
+    "lab:unlink": "jupyter labextension uninstall @jupyterlab/autorun --no-build",
+    "precommit": "lint-staged",
+    "watch": "tsc -w"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*{.ts,.tsx,.css,.json,.md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^1.1.0",
+    "@jupyterlab/apputils": "^1.1.0",
+    "@jupyterlab/coreutils": "^3.1.0",
+    "@jupyterlab/docmanager": "^1.1.0",
+    "@jupyterlab/notebook": "^1.1.0",
+    "@jupyterlab/notebook-extension": "^1.1.0",
+    "@jupyterlab/rendermime": "^1.1.0",
+    "react": "~16.8.4",
+    "react-dom": "~16.8.4",
+    "react-toggle": "^4.1.1",
+    "typestyle": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.11",
+    "@types/react": "~16.8.18",
+    "@types/react-dom": "~16.8.4",
+    "@types/react-toggle": "^4.0.2",
+    "husky": "^3.0.1",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "rimraf": "^2.6.1",
+    "typescript": "~3.4.3",
+    "yarn-deduplicate": "^1.1.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "jupyterlab": {
+    "extension": true
+  }
+}

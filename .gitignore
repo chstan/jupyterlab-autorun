@@ -1,0 +1,28 @@
+lib/
+node_modules/
+
+release.py
+yarn-error.log
+src/components/utils.ts
+
+# build/test cruft
+*.bundle.*
+.cache
+.vscode
+*.py[co]
+.pytest_cache
+__pycache__
+*.egg-info
+*.tsbuildinfo
+
+# temp/system files
+*~
+*.bak
+.ipynb_checkpoints
+.DS_Store
+\#*#
+.#*
+
+# jetbrains stuff
+*.iml
+.idea/
