@@ -18,7 +18,7 @@ This is a little nicer than reevaluating cells and editting them again, and is e
 ## Install
 
 ```bash
-TODO publish to a public source
+jupyter labextension install jupyterlab-autorun
 ```
 
 ## Development
