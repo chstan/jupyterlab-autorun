@@ -1,5 +1,5 @@
 {
-  "name": "@jupyterlab/autorun",
+  "name": "jupyterlab-autorun",
   "version": "0.0.1",
   "description": "A JupyterLab extension enabling automatically rerunning cells during editing",
   "keywords": [
